@@ -1,11 +1,10 @@
 const express = require("express");
 const app = express();
+const router = require("./router/auth-router");
+//Mount the router: To use the router in your main Express , you cannot "mount" it at a specific URL prefix
 
-// app.get: Sets up a route handler for HTTP GET requests. "/" : Define the route path , responding to the Root URL.
+app.use("/api/auth", router);
 
-//(req , res) => {...} : An arrow function handling the request (req) and constructing the response(res).
-
-//res.send("HEllO WORLD") : Sends the HELLO WORLD message as a response when the route ius accessed
 app.get("/", (req, res) => {
   res.status(200).send("Hello World");
 });
