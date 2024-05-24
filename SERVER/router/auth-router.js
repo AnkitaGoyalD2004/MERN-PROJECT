@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { home, register } = require("../controllers/auth-controller");
+const authContollers = require("../controllers/auth-controller");
 // router.get("/", (req, res) => {
 //   res.status(200).send("Hello World");
 // });
@@ -9,7 +9,7 @@ const { home, register } = require("../controllers/auth-controller");
 
 //(req , res) => {...} : An arrow function handling the request (req) and constructing the response(res).
 
-router.route("/").get(home);
-router.route("/register").get(register);
-
+router.route("/").get(authContollers.home);
+router.route("/register").post(authContollers.register);
+//when we have to add something then we use the POST method
 module.exports = router;
