@@ -7,4 +7,12 @@ const home = async (req, res) => {
     console.log("error");
   }
 };
-module.exports = { home };
+
+const register = async (req, res) => {
+  try {
+    res.status(200).send("Welcome to the Registration page");
+  } catch (error) {
+    res.status(400).send({ msg: "page not found" });
+  }
+};
+module.exports = { home, register };
