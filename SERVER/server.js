@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const router = require("./router/auth-router");
+const connectDB = require("./utils/db.js");
+
+require("dotenv").config();
 
 //use of Middleware
 app.use(express.json());
@@ -14,7 +17,10 @@ app.use(router);
 // app.get("/", (req, res) => {
 //   res.status(200).send("Hello World");
 // });
+
 const PORT = 1800;
-app.listen(PORT, () => {
-  console.log(`Server is running at PORT : ${PORT}`);
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running at PORT : ${PORT}`);
+  });
 });
