@@ -25,3 +25,8 @@ const userSchema = new mongoose.Schema({
 });
 
 // Model Acts as a higher level abstraction that interacts with the database based on the defined schema . it represents a collection and provides an interface for querying creating updating and deleting documents in that collection . Models are created from schema and enable you to work with MongoDB data in more structured manner in your application
+
+//define the model or the collection name
+const User = new mongoose.model("User", userSchema);
+
+module.exports = User;
