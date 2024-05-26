@@ -1,16 +1,15 @@
-require("dotenv").config();
 const express = require("express");
 const app = express();
 const router = require("./router/auth-router");
+require("dotenv").config();
 const connectDB = require("./utils/db.js");
-
-//use of Middleware
 app.use(express.json());
+//use of Middleware
+
 //This line of code adds Express middleware that parses incoming request bodies with JSON payloads . It's important to place this before any routes that need to handle JSON data in the req body . This middleware is responsible for parsing JSON data from requests , and it should be applied at the beganing of your middleware stack to ensure it's available for all subsequent route handler.
 
 //Mount the router: To use the router in your main Express , you cannot "mount" it at a specific URL prefix
 
-//
 app.use(router);
 
 // app.get("/", (req, res) => {
