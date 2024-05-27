@@ -49,4 +49,7 @@ const register = async (req, res) => {
     res.status(400).send({ msg: "page not found" });
   }
 };
+
+//User login
+
 module.exports = { home, register };
