@@ -28,15 +28,16 @@ const register = async (req, res) => {
       return res.status(400).json({ msg: "email already exists" });
     }
 
-    //hash the password
-    const saltRound = 10;
-    const hash_password = await bcrypt.hash(password, saltRound);
+    // //hash the password
+    // const saltRound = 10;
+    // const hash_password = await bcrypt.hash(password, saltRound);
 
     const userCreated = await User.create({
       username,
       email,
       phone,
-      password: hash_password,
+      password,
+      // password: hash_password,
     });
 
     res.status(200).send({ userCreated });
