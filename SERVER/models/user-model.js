@@ -58,8 +58,6 @@ userSchema.methods.generateToken = function () {
     return jwt.sign(
       {
         userId: this._id.toString(),
-        email: this.email,
-        isAdmin: this.isAdmin,
       },
       process.env.JWT_SECRET_KEY,
       {

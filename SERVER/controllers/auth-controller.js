@@ -39,14 +39,13 @@ const register = async (req, res) => {
       password,
       // password: hash_password,
     });
-    2;
-    res.status(200).send({
+    return res.status(200).send({
       msg: userCreated,
       token: await userCreated.generateToken(),
       userId: userCreated._id > toString(),
     });
   } catch (error) {
-    res.status(400).send({ msg: "page not found" });
+    return res.status(400).send({ msg: "page not found" });
   }
 };
 
