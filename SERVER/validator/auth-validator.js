@@ -7,7 +7,7 @@ const signupSchema = yup.object().shape({
     .string()
     .required("Name is required")
     .trim()
-    .min(5, { message: "Name must be atleast of 3 character" })
+    .min(4, { message: "Name must be atleast of 3 character" })
     .max(255, { message: "Name must not be more than 255 character" }),
   email: yup
     .string()
