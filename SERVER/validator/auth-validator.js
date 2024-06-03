@@ -19,7 +19,8 @@ const signupSchema = yup.object().shape({
     .string()
     .required("Phone is required")
     .trim()
-    .min(5, { message: "Phone must be atleast of 10 character" }),
+    .min(10, { message: "Phone must be atleast of 10 character" })
+    .max(10, { message: "Phone number cannot exceed 10 digits" }),
   password: yup
     .string()
     .required(" Password is required")
