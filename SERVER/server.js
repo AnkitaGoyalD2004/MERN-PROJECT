@@ -3,6 +3,8 @@ const app = express();
 const router = require("./router/auth-router");
 require("dotenv").config();
 const connectDB = require("./utils/db.js");
+const errorMiddleware = require("./middlewares/error-middleware.js");
+
 app.use(express.json());
 //use of Middleware
 
@@ -15,6 +17,8 @@ app.use(router);
 // app.get("/", (req, res) => {
 //   res.status(200).send("Hello World");
 // });
+
+app.use(errorMiddleware);
 
 const PORT = 1800;
 connectDB().then(() => {
