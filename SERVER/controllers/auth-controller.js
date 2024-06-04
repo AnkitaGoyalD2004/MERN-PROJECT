@@ -71,7 +71,7 @@ const login = async (req, res) => {
     }
   } catch (error) {
     // res.status(500).json("internal server error");
-    next(error);
+    next(error); // if we will pass only one argument error then it will go to the error middleware and byDefault it choose the message
   }
 };
 
