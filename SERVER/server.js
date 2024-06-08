@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const router = require("./router/auth-router");
+const authRoute = require("./router/auth-router");
 require("dotenv").config();
 const connectDB = require("./utils/db.js");
 const errorMiddleware = require("./middlewares/error-middleware.js");
