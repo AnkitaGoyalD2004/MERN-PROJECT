@@ -28,4 +28,5 @@ const signupSchema = yup.object().shape({
     .min(5, { message: "Password must be atleast of 6 character" })
     .max(255, { message: "Password  can't  be greater than 1024 character" }),
 });
-module.exports = signupSchema;
+
+const loginSchema = (module.exports = signupSchema);

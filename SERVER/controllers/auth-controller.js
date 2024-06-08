@@ -10,7 +10,7 @@ const home = async (req, res) => {
   }
 };
 
-//User registration logic
+//User registration
 // 1. Get the registration data
 // 2. check the email existance
 // 3 . Hash the password
